@@ -1,0 +1,16 @@
+[2025-06-11T14:53:05.663+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_data_pipeline.extract_customer_data scheduled__2025-06-10T02:00:00+00:00 [queued]>
+[2025-06-11T14:53:05.681+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_data_pipeline.extract_customer_data scheduled__2025-06-10T02:00:00+00:00 [queued]>
+[2025-06-11T14:53:05.682+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 3
+[2025-06-11T14:53:05.705+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): extract_customer_data> on 2025-06-10 02:00:00+00:00
+[2025-06-11T14:53:05.712+0000] {standard_task_runner.py:57} INFO - Started process 2734 to run task
+[2025-06-11T14:53:05.717+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sales_data_pipeline', 'extract_customer_data', 'scheduled__2025-06-10T02:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/sales_pipeline_dag.py', '--cfg-path', '/tmp/tmp7cpx6hqe']
+[2025-06-11T14:53:05.725+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask extract_customer_data
+[2025-06-11T14:53:05.805+0000] {task_command.py:415} INFO - Running <TaskInstance: sales_data_pipeline.extract_customer_data scheduled__2025-06-10T02:00:00+00:00 [running]> on host e04f6cd33f35
+[2025-06-11T14:53:05.941+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='admin@company.com' AIRFLOW_CTX_DAG_OWNER='data-engineering' AIRFLOW_CTX_DAG_ID='sales_data_pipeline' AIRFLOW_CTX_TASK_ID='extract_customer_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-10T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-10T02:00:00+00:00'
+[2025-06-11T14:53:05.958+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:314 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2025-06-11T14:53:06.012+0000] {sales_pipeline_dag.py:93} INFO - Extracted 5 customer records for 2025-06-10
+[2025-06-11T14:53:06.264+0000] {sales_pipeline_dag.py:101} INFO - Saved customer data to /opt/data/raw/customers/2025-06-10/customers.parquet
+[2025-06-11T14:53:06.266+0000] {python.py:194} INFO - Done. Returned value was: /opt/data/raw/customers/2025-06-10/customers.parquet
+[2025-06-11T14:53:06.307+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=sales_data_pipeline, task_id=extract_customer_data, execution_date=20250610T020000, start_date=20250611T145305, end_date=20250611T145306
+[2025-06-11T14:53:06.348+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-06-11T14:53:06.390+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
